@@ -1,0 +1,1 @@
+add_executable(mqtttest main.c mongoose.c)

@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  mqtttest:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    image: mqtttest:local
+    volumes:
+      - .:/mqtttest:cached
+    cap_add:
+      - SYS_PTRACE
+    command: /bin/sh -c "while sleep 1000; do :; done"

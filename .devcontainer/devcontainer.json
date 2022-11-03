@@ -1,0 +1,13 @@
+{
+    "name": "mqtttest",
+  
+    "dockerComposeFile": ["../docker-compose.yml", "docker-compose.extend.yml"],
+    "service": "client",
+    "extensions": [
+      "ms-vscode.cpptools",
+      "ms-vscode.cmake-tools",
+      "mhutchie.git-graph"
+    ],
+    "workspaceFolder": "/mqtttest",
+    "shutdownAction": "stopCompose"
+  }
