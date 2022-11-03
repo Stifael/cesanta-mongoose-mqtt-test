@@ -69,10 +69,10 @@ static void fn(struct mg_connection *c, int ev, void *ev_data, void *fn_data)
                  (int)mm->topic.len, mm->topic.ptr));
         
         // send zero-byte payload to subscribed topic
-        //struct mg_str pubt = mg_str(s_pub_topic), data = mg_str("");
-        //mg_mqtt_pub(c, pubt, data, s_qos, true);
-        //MG_INFO(("PUBLISHED %.*s -> %.*s", (int)data.len, data.ptr,
-        //         (int)pubt.len, pubt.ptr));
+        struct mg_str pubt = mg_str(s_pub_topic), data = mg_str("");
+        mg_mqtt_pub(c, pubt, data, s_qos, true);
+        MG_INFO(("PUBLISHED %.*s -> %.*s", (int)data.len, data.ptr,
+                 (int)pubt.len, pubt.ptr));
 
     }
     else if (ev == MG_EV_CLOSE)
